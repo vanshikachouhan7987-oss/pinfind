@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>PinFind</title>
+
+<style>
+
+body{
+background:#FAF9F7;
+text-align:center;
+padding-top:50px;
+font-family:Arial;
+}
+
+button{
+background:#B21F2D;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin:5px;
+}
+
+input{
+padding:15px;
+width:300px;
+border-radius:10px;
+border:1px solid lightgray;
+}
+
+.card{
+border:1px solid #ddd;
+padding:10px;
+width:200px;
+border-radius:10px;
+background:white;
+}
+
+.container{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 style="color:#B21F2D;">PinFind ✦</h1>
+<p>Seen it on Pinterest? Find it here.</p>
+
+<input id="pinInput" type="text" placeholder="Paste Pinterest link or keyword">
+<br><br>
+
+<button onclick="findProduct()">Search</button>
+
+<p id="result" style="font-weight:bold; margin-top:20px;"></p>
+
+<hr style="margin:40px;">
+
+<h2>Categories</h2>
+
+<button>Home Decor</button>
+<button>Fashion</button>
+<button>Jewelry</button>
+<button>Furniture</button>
+<button>Beauty</button>
+
+<hr style="margin:40px;">
+
+<h2>Featured Finds 🔥</h2>
+
+<div class="container">
+
+  <div class="card">
+    <h3>Nordic Lamp</h3>
+    <p>Home Decor</p>
+    <a href="https://www.amazon.in" target="_blank">
+      <button>Buy Now</button>
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Minimal Chair</h3>
+    <p>Furniture</p>
+    <a href="https://www.amazon.in" target="_blank">
+      <button>Buy Now</button>
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Gold Earrings</h3>
+    <p>Jewelry</p>
+    <a href="https://www.amazon.in" target="_blank">
+      <button>Buy Now</button>
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Aesthetic Bag</h3>
+    <p>Fashion</p>
+    <a href="https://www.amazon.in" target="_blank">
+      <button>Buy Now</button>
+    </a>
+  </div>
+
+</div>
+
+<script>
+function findProduct() {
+  let input = document.getElementById("pinInput").value.toLowerCase();
+
+  if (input.includes("lamp")) {
+    document.getElementById("result").innerHTML =
+      "We found: Nordic Lamp → Amazon / Etsy / Flipkart";
+  }
+
+  else if (input.includes("chair")) {
+    document.getElementById("result").innerHTML =
+      "We found: Minimal Chair → IKEA / Amazon";
+  }
+
+  else if (input.includes("jewelry") || input.includes("earring")) {
+    document.getElementById("result").innerHTML =
+      "We found: Gold Earrings → Myntra / Amazon / Ajio";
+  }
+
+  else {
+    document.getElementById("result").innerHTML =
+      "No match found. Try: lamp / chair / jewelry";
+  }
+}
+</script>
+
+</body>
+
+</html>
